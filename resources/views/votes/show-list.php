@@ -47,7 +47,7 @@
     template.helper('$', $);
 
     //初始化数据
-    var voteWorkData = <?= json_encode($voteWorks, JSON_UNESCAPED_UNICODE);?>;
+    var voteWorkData = <?= json_encode($voteWorks, JSON_UNESCAPED_UNICODE); ?>;
     for (var i in voteWorkData) {
       var tpl = template.compile($('.js-thumbnail-item-tpl').html());
       var html = tpl(voteWorkData[i]);

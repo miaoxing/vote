@@ -16,7 +16,7 @@ class Votes extends \miaoxing\plugin\BaseController
     public function indexAction($req)
     {
         switch ($req['_format']) {
-            case 'json' :
+            case 'json':
                 $votes = wei()->vote()->curApp()->notDeleted();
 
                 // 分页
@@ -25,10 +25,10 @@ class Votes extends \miaoxing\plugin\BaseController
                 // 排序
                 $votes->desc('id');
 
-                $data = array();
+                $data = [];
                 foreach ($votes->findAll() as $vote) {
                     $data[] = $vote->toArray() + [
-                            'userCount' => $vote->getAllVoteUserCount()
+                            'userCount' => $vote->getAllVoteUserCount(),
                         ];
                 }
 
@@ -40,7 +40,7 @@ class Votes extends \miaoxing\plugin\BaseController
                     'records' => $votes->count(),
                 ]);
 
-            default :
+            default:
                 return get_defined_vars();
         }
     }
@@ -53,6 +53,7 @@ class Votes extends \miaoxing\plugin\BaseController
     public function editAction($req)
     {
         $vote = wei()->vote()->curApp()->notDeleted()->findId($req['id']);
+
         return get_defined_vars();
     }
 
@@ -73,7 +74,7 @@ class Votes extends \miaoxing\plugin\BaseController
                 'chances' => [],
                 'description' => [
                     'required' => false,
-                ]
+                ],
             ],
             'names' => [
                 'startTime' => '开始时间',
@@ -81,8 +82,8 @@ class Votes extends \miaoxing\plugin\BaseController
                 'name' => '投票活动标题',
                 'chanceRule' => '投票限制',
                 'chances' => '投票次数',
-                'description' => '投票活动详情'
-            ]
+                'description' => '投票活动详情',
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());
@@ -99,6 +100,7 @@ class Votes extends \miaoxing\plugin\BaseController
         $vote = wei()->vote()->curApp()->notDeleted()->findOneById($req['id']);
         wei()->vote()->curApp()->andWhere('isDefault = 1')->update('isDefault = 0');
         $vote->save(['isDefault' => 1]);
+
         return $this->suc();
     }
 
@@ -106,6 +108,7 @@ class Votes extends \miaoxing\plugin\BaseController
     {
         $vote = wei()->vote()->curApp()->notDeleted()->findOneById($req['id']);
         $vote->softDelete();
+
         return $this->suc();
     }
 }

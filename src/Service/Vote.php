@@ -7,17 +7,17 @@ class Vote extends \miaoxing\plugin\BaseModel
     protected $table = 'votes';
 
     protected $providers = [
-        'db' => 'app.db'
+        'db' => 'app.db',
     ];
 
     protected $data = [
         'chances' => 3,
-        'chanceRule' => 'all'
+        'chanceRule' => 'all',
     ];
 
     protected $chanceRules = [
         'all' => '整个活动',
-        'everyDay' => '每个自然日'
+        'everyDay' => '每个自然日',
     ];
 
     public function getRulesToOptions()
@@ -26,7 +26,7 @@ class Vote extends \miaoxing\plugin\BaseModel
         foreach ($this->chanceRules as $id => $value) {
             $data[] = [
                 'id' => $id,
-                'name' => $value
+                'name' => $value,
             ];
         }
 
@@ -44,6 +44,7 @@ class Vote extends \miaoxing\plugin\BaseModel
         $ret = $this->checkVotable($voteWork);
         if ($ret['code'] < 0) {
             wei()->voteLog->log($this, $voteWork, $ret);
+
             return $ret;
         }
 
@@ -72,7 +73,7 @@ class Vote extends \miaoxing\plugin\BaseModel
         $voteUser->save();
 
         $ret += $extData;
-        $ret['message'] = '投票成功,您还可以投票' . ($ret['leftChances']-1) . '次';
+        $ret['message'] = '投票成功,您还可以投票' . ($ret['leftChances'] - 1) . '次';
         wei()->voteLog->log($this, $voteWork, $ret);
 
         return $ret;
@@ -144,6 +145,7 @@ class Vote extends \miaoxing\plugin\BaseModel
     public function getAllVoteUserCount()
     {
         $data = wei()->voteWork()->select('sum(voteUserCount) as count')->curApp()->andWhere(['voteId' => $this['id']])->fetch();
+
         return $data['count'] ?: 0;
     }
 
@@ -154,6 +156,7 @@ class Vote extends \miaoxing\plugin\BaseModel
     public function getAllVoteCount()
     {
         $data = wei()->voteWork()->select('sum(voteCount) as count')->curApp()->andWhere(['voteId' => $this['id']])->fetch();
+
         return $data['count'] ?: 0;
     }
 
@@ -168,13 +171,14 @@ class Vote extends \miaoxing\plugin\BaseModel
             ->curApp()
             ->andWhere(['voteId' => $this['id']])
             ->fetch();
+
         return $data['count'] ?: 0;
     }
 
     public function afterFind()
     {
         parent::afterFind();
-        $this['styles'] = (array)json_decode($this['styles'], true);
+        $this['styles'] = (array) json_decode($this['styles'], true);
     }
 
     public function beforeSave()

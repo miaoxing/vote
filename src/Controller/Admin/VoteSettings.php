@@ -17,7 +17,8 @@ class VoteSettings extends \miaoxing\plugin\BaseController
 
     public function updateAction($req)
     {
-        $this->setting->setValues((array)$req['settings'], 'vote.');
+        $this->setting->setValues((array) $req['settings'], 'vote.');
+
         return $this->suc();
     }
 }

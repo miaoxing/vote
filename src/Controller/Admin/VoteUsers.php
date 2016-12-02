@@ -13,7 +13,7 @@ class VoteUsers extends \miaoxing\plugin\BaseController
     public function indexAction($req)
     {
         switch ($req['_format']) {
-            case 'json' :
+            case 'json':
                 $search = [];
                 if ($req['voteId']) {
                     $search += ['voteId' => $req['voteId']];
@@ -31,7 +31,7 @@ class VoteUsers extends \miaoxing\plugin\BaseController
                 // 排序
                 $voteUsers->desc('id');
 
-                $data = array();
+                $data = [];
                 foreach ($voteUsers->findAll() as $voteUser) {
                     $data[] = $voteUser->toArray() + [
                             'user' => $voteUser->getUser()->toArray(),
@@ -47,7 +47,7 @@ class VoteUsers extends \miaoxing\plugin\BaseController
                     'records' => $voteUsers->count(),
                 ]);
 
-            default :
+            default:
                 return get_defined_vars();
         }
     }

@@ -13,27 +13,27 @@ class VoteWorks extends \miaoxing\plugin\BaseController
     public function indexAction($req)
     {
         switch ($req['_format']) {
-            case 'json' :
+            case 'json':
                 $voteWorks = wei()->voteWork()->curApp()->andWhere(['voteId' => $req['voteId']])->notDeleted();
 
                 // 分页
                 $voteWorks->limit($req['rows'])->page($req['page']);
 
                 // 排序
-                if ($req["order"] && $req["sort"]) {
-                    $req["order"] == "asc" ? $voteWorks->asc($req["sort"]) : $voteWorks->desc($req["sort"]);
+                if ($req['order'] && $req['sort']) {
+                    $req['order'] == 'asc' ? $voteWorks->asc($req['sort']) : $voteWorks->desc($req['sort']);
                 } else {
                     $voteWorks->desc('id');
                 }
 
-                if ($req["name"]) {
-                    $voteWorks->andWhere('name like ?', '%'. $req["name"] .'%');
+                if ($req['name']) {
+                    $voteWorks->andWhere('name like ?', '%'. $req['name'] .'%');
                 }
 
                 $data = [];
                 foreach ($voteWorks as $voteWork) {
                     $data[] = $voteWork->toArray() + [
-                            'user' => $voteWork->getUser()
+                            'user' => $voteWork->getUser(),
                         ];
                 }
 
@@ -45,7 +45,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
                     'records' => $voteWorks->count(),
                 ]);
 
-            default :
+            default:
                 return get_defined_vars();
         }
     }
@@ -58,6 +58,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
     public function editAction($req)
     {
         $voteWork = wei()->voteWork()->curApp()->notDeleted()->findId($req['id']);
+
         return get_defined_vars();
     }
 
@@ -76,8 +77,8 @@ class VoteWorks extends \miaoxing\plugin\BaseController
             ],
             'names' => [
                 'name' => '作品名称',
-                'voteId' => '活动ID'
-            ]
+                'voteId' => '活动ID',
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());
@@ -93,6 +94,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
     {
         $voteWork = wei()->voteWork()->curApp()->notDeleted()->findOneById($req['id']);
         $voteWork->softDelete();
+
         return $this->suc();
     }
 }

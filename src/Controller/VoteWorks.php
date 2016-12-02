@@ -6,13 +6,13 @@ use Miaoxing\Plugin\Middleware\RateLimit;
 
 class VoteWorks extends \miaoxing\plugin\BaseController
 {
-    public function __construct(array $options = array())
+    public function __construct(array $options = [])
     {
         parent::__construct($options);
         $this->middleware(RateLimit::className(), [
             'only' => 'vote',
             'timeWindow' => RateLimit::MINUTE,
-            'max' => 100
+            'max' => 100,
         ]);
     }
 
@@ -23,7 +23,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
             ->select('max(voteCount) as maxCount')
             ->curApp()
             ->andWhere(['voteId' => $voteWork['voteId']])
-            ->andWhere('deleteTime = ?', ["0000-00-00 00:00:00"])
+            ->andWhere('deleteTime = ?', ['0000-00-00 00:00:00'])
             ->fetch()['maxCount'];
 
         // 增加排名和与上一名相差的票数
@@ -38,6 +38,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
         $vote = wei()->vote()->curApp()->findOneById($voteWork['voteId']);
 
         $headerTitle = $voteWork['name'];
+
         return get_defined_vars();
     }
 
@@ -46,6 +47,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
         $voteWork = wei()->voteWork()->curApp()->findOneById($req['voteWorkId']);
         $vote = wei()->vote()->curApp()->findOneById($voteWork['voteId']);
         $ret = $vote->vote($voteWork);
+
         return $this->ret($ret);
     }
 
@@ -61,7 +63,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
             'rules' => [
                 'username' => [],
                 'mobile' => [
-                    'mobileCn' => true
+                    'mobileCn' => true,
                 ],
                 'name' => [],
                 'images' => [],
@@ -72,8 +74,8 @@ class VoteWorks extends \miaoxing\plugin\BaseController
                 'mobile' => '电话',
                 'name' => '作品名称',
                 'images' => '作品图片',
-                'voteId' => '活动ID'
-            ]
+                'voteId' => '活动ID',
+            ],
         ]);
         if (!$validator->isValid()) {
             return $this->err($validator->getFirstMessage());

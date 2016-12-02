@@ -15,7 +15,7 @@ class VoteUser extends \miaoxing\plugin\BaseModel
      * {@inheritdoc}
      */
     protected $providers = [
-        'db' => 'app.db'
+        'db' => 'app.db',
     ];
 
     /**
@@ -31,12 +31,14 @@ class VoteUser extends \miaoxing\plugin\BaseModel
     public function getUser()
     {
         $this->user || $this->user = wei()->user()->findOrInitById($this['userId']);
+
         return $this->user;
     }
 
     public function getVoteWork()
     {
         $this->voteWork || $this->voteWork = wei()->voteWork()->findOrInitById($this['voteWorkId']);
+
         return $this->voteWork;
     }
 }

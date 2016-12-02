@@ -30,6 +30,7 @@ class Votes extends \miaoxing\plugin\BaseController
         $voteWorks = $data;
 
         $headerTitle = $vote['name'];
+
         return get_defined_vars();
     }
 

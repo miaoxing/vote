@@ -119,7 +119,7 @@
         success: function (result) {
           $.msg(result, function () {
             if (result.code > 0) {
-              window.location = $.url('admin/vote-works', {voteId: '<?= $voteWork['voteId'] ? :$e($req['voteId']); ?>'});
+              window.location = $.url('admin/vote-works', {voteId: '<?= $voteWork['voteId'] ?: $e($req['voteId']); ?>'});
             }
           });
         }

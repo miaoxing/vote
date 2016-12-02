@@ -89,7 +89,7 @@
 
     image.init({
       $container: $('.js-wx-upload-image'),
-      images: <?= json_encode((array)$images ?: []) ?>,
+      images: <?= json_encode((array) $images ?: []) ?>,
       wx: wx,
       max: 3,
       uploadUrl: $.url('wechat-image/get-wechat<?= $isCrop ? '-corp' : '' ?>-image')

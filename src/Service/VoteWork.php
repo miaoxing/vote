@@ -13,7 +13,7 @@ class VoteWork extends \miaoxing\plugin\BaseModel
      * {@inheritdoc}
      */
     protected $providers = [
-        'db' => 'app.db'
+        'db' => 'app.db',
     ];
 
     protected $user;
@@ -21,7 +21,7 @@ class VoteWork extends \miaoxing\plugin\BaseModel
     public function afterFind()
     {
         parent::afterFind();
-        $this['images'] = (array)json_decode($this['images'], true);
+        $this['images'] = (array) json_decode($this['images'], true);
     }
 
     public function beforeSave()
@@ -33,6 +33,7 @@ class VoteWork extends \miaoxing\plugin\BaseModel
     public function getUser()
     {
         $this->user || $this->user = wei()->user()->findById($this['createUser']);
+
         return $this->user;
     }
 }
