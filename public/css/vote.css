@@ -1,0 +1,201 @@
+/* 投票活动样式 */
+.vote-header {
+  margin: 0 10px;
+  text-align: left;
+  height: 50px;
+  line-height: 50px;
+}
+
+.vote-header .title {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.vote-header-left {
+  float: left;
+}
+
+.vote-header-right {
+  float: right;
+}
+
+.vote-header-img .title-img {
+  width: 100%;
+}
+
+.vote-body {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.vote-body .vote-time, .vote-body .vote-description {
+  text-align: left;
+  margin: 0 10px 0 15px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.vote-body .vote-tips {
+  height: 35px;
+  line-height: 35px;
+}
+
+.vote-body .vote-tips.left {
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: right;
+  padding: 0 5px;
+}
+
+.vote-body .vote-tips.right {
+  font-size: 12px;
+}
+
+.vote-join {
+  margin-right: 10px;
+}
+
+.vote-nav {
+  height: 40px;
+}
+
+.vote-work-section {
+  margin: 0 15px;
+  text-align: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.vote-work-section .title {
+  font-size: 16px;
+}
+
+.vote-work-body .description {
+  text-align: left;
+  margin: 5px 10px 0 15px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.vote-work-body .vote-tips {
+  height: 35px;
+  line-height: 35px;
+}
+
+.vote-work-body .vote-tips.left {
+  margin-left: 10px;
+  font-size: 12px;
+  text-align: right;
+  padding: 0 5px;
+}
+
+.vote-work-body .vote-tips.right {
+  font-size: 12px;
+}
+
+/* 瀑布流样式 */
+#masonry {
+  padding: 0;
+  min-height: 450px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.thumbnail {
+  display: block;
+  padding: 4px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+#masonry .thumbnail {
+  width: 46%;
+  margin: 2%;
+  padding: 0;
+  border-width: 1px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+#masonry .thumbnail .header-title{
+  margin: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+#masonry .thumbnail .img {
+  padding: 10px;
+}
+
+#masonry .thumbnail .img img {
+  margin-bottom: 5px;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+#masonry .thumbnail .caption {
+  background-color: #fff;
+  padding: 9px;
+  padding-top: 0px;
+  font-size: 13px;
+  color: #555555;
+}
+
+#masonry .thumbnail .caption .description {
+  font-size: 12px;
+  margin: 5px 0;
+  text-align: left;
+
+  /*多行省略*/
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+#masonry .thumbnail .caption .extra {
+  font-size: 11px;
+  text-align: right;
+}
+
+#masonry .thumbnail .caption .extra .vote .vote-button{
+  border: 1px;
+  border-radius: 3px;
+  color: #fff;
+}
+
+#masonry .thumbnail .caption .extra .vote-count {
+  text-align: left;
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#masonry .thumbnail .caption .extra .vote-count-num {
+  color: #ff4500;
+}
+
+.text-left {
+  float: left;
+}
+
+.text-right {
+  float: right;
+}
