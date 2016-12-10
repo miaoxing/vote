@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Vote\Service;
 
-use miaoxing\plugin\services\User;
+use Miaoxing\Plugin\Service\User;
 
 class VoteUser extends \miaoxing\plugin\BaseModel
 {
