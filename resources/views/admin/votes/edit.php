@@ -129,7 +129,7 @@
           </button>
 
           &nbsp; &nbsp; &nbsp;
-          <a class="btn" href="<?= $url('admin/votes') ?>">
+          <a class="btn btn-default" href="<?= $url('admin/votes') ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>

@@ -87,7 +87,7 @@
           </button>
 
           &nbsp; &nbsp; &nbsp;
-          <a class="btn"
+          <a class="btn btn-default"
              href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">
             <i class="fa fa-undo"></i>
             返回列表
