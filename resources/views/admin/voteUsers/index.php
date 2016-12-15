@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn pull-right" href="javascript:;void(0)" onclick="javascript:history.back(-1);" >返回</a>
+  <a class="btn btn-default pull-right" href="javascript:;void(0)" onclick="javascript:history.back(-1);" >返回</a>
   <h1>
     投票管理
     <small>

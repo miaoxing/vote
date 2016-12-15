@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn pull-right" href="<?= $url('admin/votes') ?>">返回列表</a>
+  <a class="btn btn-default pull-right" href="<?= $url('admin/votes') ?>">返回列表</a>
   <h1>
     投票管理
   </h1>
