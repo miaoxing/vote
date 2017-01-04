@@ -11,7 +11,7 @@ class V20161202144605CreateVoteTables extends BaseMigration
      */
     public function up()
     {
-        $this->scheme->table('votes')
+        $this->schema->table('votes')
             ->id()
             ->int('appId')
             ->string('name', 64)->comment('活动名称')
@@ -29,7 +29,7 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->softDeletable()
             ->exec();
 
-        $this->scheme->table('voteWorks')
+        $this->schema->table('voteWorks')
             ->id()
             ->int('appId')
             ->int('voteId')
@@ -45,7 +45,7 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->softDeletable()
             ->exec();
 
-        $this->scheme->table('voteUsers')
+        $this->schema->table('voteUsers')
             ->id()
             ->int('appId')
             ->int('voteId')
@@ -55,7 +55,7 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->timestamps()
             ->exec();
 
-        $this->scheme->table('voteLogs')
+        $this->schema->table('voteLogs')
             ->id()
             ->int('appId')
             ->int('voteId')
@@ -75,9 +75,9 @@ class V20161202144605CreateVoteTables extends BaseMigration
      */
     public function down()
     {
-        $this->scheme->dropIfExists('votes');
-        $this->scheme->dropIfExists('voteWorks');
-        $this->scheme->dropIfExists('voteUsers');
-        $this->scheme->dropIfExists('voteLogs');
+        $this->schema->dropIfExists('votes');
+        $this->schema->dropIfExists('voteWorks');
+        $this->schema->dropIfExists('voteUsers');
+        $this->schema->dropIfExists('voteLogs');
     }
 }
