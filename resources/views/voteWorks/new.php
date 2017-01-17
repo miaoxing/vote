@@ -80,7 +80,7 @@
   // 图片上传
   require([
     'plugins/wechatImage/assets/wechatImage',
-    'plugins/wechat<?= ($isCrop = wei()->plugin->isInstalled('wechatCorp')) ? 'Corp' : '' ?>/assets/wx<?= $isCrop ? '-corp' : '' ?>',
+    'plugins/wechat<?= ($isCrop = wei()->plugin->isInstalled('wechatCorp')) ? 'Corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
     'comps/artTemplate/template.min'
   ], function (image, wx, template) {
     template.helper('$', $);

@@ -23,7 +23,7 @@
     }
   }).fixSwipeImgHeight();
 
-  require(['plugins/wechat/assets/wx'], function (wx) {
+  require(['plugins/wechat/js/wx'], function (wx) {
     wx.load(function () {
       $('.js-images-preview img').click(function () {
         var urls = $(this).closest('.js-images-preview').find('img').map(function () {
