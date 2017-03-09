@@ -55,7 +55,7 @@
   </div>
 </form>
 
-<?php require $view->getFile('wechatImage:wechatImage/uploadImage.php') ?>
+<?php require $view->getFile('@wechat-image/wechat-image/uploadImage.php') ?>
 <?php require $view->getFile('vote:voteWorks/new-append.php') ?>
 
 <?= $block('js') ?>
@@ -79,7 +79,7 @@
 
   // 图片上传
   require([
-    'plugins/wechatImage/assets/wechatImage',
+    'plugins/wechat-image/js/wechat-image',
     'plugins/wechat<?= ($isCrop = wei()->plugin->isInstalled('wechatCorp')) ? 'Corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
     'comps/artTemplate/template.min'
   ], function (image, wx, template) {
