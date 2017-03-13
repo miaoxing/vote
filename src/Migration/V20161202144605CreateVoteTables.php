@@ -24,9 +24,9 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->bool('isRepeated')->defaults(1)->comment('是否可重复投票的')
             ->string('chanceRule', 16)
             ->int('chances', 4)
-            ->timestamps()
-            ->userstamps()
-            ->softDeletable()
+            ->timestampsV1()
+            ->userstampsV1()
+            ->softDeletableV1()
             ->exec();
 
         $this->schema->table('voteWorks')
@@ -40,9 +40,9 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->int('voteCount', 4)
             ->int('voteUserCount', 4)
             ->mediumText('images')
-            ->timestamps()
-            ->userstamps()
-            ->softDeletable()
+            ->timestampsV1()
+            ->userstampsV1()
+            ->softDeletableV1()
             ->exec();
 
         $this->schema->table('voteUsers')
@@ -52,7 +52,7 @@ class V20161202144605CreateVoteTables extends BaseMigration
             ->int('voteWorkId')
             ->int('userId')
             ->int('voteCount', 4)
-            ->timestamps()
+            ->timestampsV1()
             ->exec();
 
         $this->schema->table('voteLogs')
