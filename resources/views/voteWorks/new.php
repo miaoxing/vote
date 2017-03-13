@@ -48,7 +48,7 @@
   <div class="form-group js-upload-container">
   </div>
 
-  <input type="hidden" name="voteId" id="voteId" value="<?= $e($req['voteId']) ?>">
+  <input type="hidden" name="voteId" id="vote-id" value="<?= $e($req['voteId']) ?>">
 
   <div class="form-footer">
     <button type="submit" class="btn btn-primary btn-block">提 交</button>
@@ -78,9 +78,10 @@
   });
 
   // 图片上传
+  <?php $isCrop = wei()->plugin->isInstalled('wechat-corp'); ?>
   require([
     'plugins/wechat-image/js/wechat-image',
-    'plugins/wechat<?= ($isCrop = wei()->plugin->isInstalled('wechat-corp')) ? '-corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
+    'plugins/wechat<?= $isCrop ? '-corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
     'comps/artTemplate/template.min'
   ], function (image, wx, template) {
     template.helper('$', $);

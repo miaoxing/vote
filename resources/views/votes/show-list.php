@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="<?= $asset('plugins/vote/css/vote.css') ?>"/>
 <?= $block->end() ?>
 
-<div id="masonry" class="container-fluid">
+<div id="masonry" class="container-fluid masonry">
 </div>
 
-<div id="masonry-ghost" class="hide">
+<div id="masonry-ghost" class="hide masonry-ghost">
 </div>
 
 <script type="text/html" class="js-thumbnail-item-tpl">
@@ -27,7 +27,7 @@
       <div class="extra">
         <span class="vote-count">票数：<span class="vote-count-num js-vote-count"><%= voteCount %></span></span>
         <span class="vote">
-          <a href="javascript:;void(0)" data-id="<%= id %>" class="js-vote">
+          <a href="javascript:void(0)" data-id="<%= id %>" class="js-vote">
             <button class="vote-button bg-primary">投票</button>
           </a>
         </span>

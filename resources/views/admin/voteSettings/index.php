@@ -8,7 +8,8 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <form action="<?= $url('admin/vote-settings/update') ?>" class="js-setting-form form-horizontal" method="post" role="form">
+    <form action="<?= $url('admin/vote-settings/update') ?>" class="js-setting-form form-horizontal" method="post"
+      role="form">
       <div class="form-group">
         <label class="col-lg-2 control-label" for="isOpen">
           是否允许报名
@@ -16,10 +17,10 @@
 
         <div class="col-lg-4">
           <label class="radio-inline">
-            <input type="radio" class="js-vote-isOpen" name="settings[vote.isOpen]" value="1"> 开启
+            <input type="radio" class="js-vote-is-open" name="settings[vote.isOpen]" value="1"> 开启
           </label>
           <label class="radio-inline">
-            <input type="radio" class="js-vote-isOpen" name="settings[vote.isOpen]" value="0"> 关闭
+            <input type="radio" class="js-vote-is-open" name="settings[vote.isOpen]" value="0"> 关闭
           </label>
         </div>
 
@@ -43,7 +44,7 @@
 <script>
   require(['form', 'validator'], function (form) {
     $('.js-setting-form')
-      .loadJSON(<?= json_encode(['js-vote-isOpen' => $setting('vote.isOpen', '1')]) ?>)
+      .loadJSON(<?= json_encode(['js-vote-is-open' => $setting('vote.isOpen', '1')]) ?>)
       .ajaxForm({
         dataType: 'json',
         beforeSubmit: function (arr, $form, options) {

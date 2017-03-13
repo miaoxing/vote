@@ -1,7 +1,8 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default pull-right" href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">返回列表</a>
+  <a class="btn btn-default pull-right"
+    href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">返回列表</a>
 
   <h1>
     投票管理
@@ -16,7 +17,7 @@
 <div class="row">
   <div class="col-xs-12">
     <form class="js-vote-work-form form-horizontal" method="post" role="form"
-          action="<?= $url('admin/vote-works/' . $voteWork->getFormAction()) ?>">
+      action="<?= $url('admin/vote-works/' . $voteWork->getFormAction()) ?>">
 
       <div class="form-group">
         <label class="col-lg-2 control-label" for="name">
@@ -77,7 +78,7 @@
       </div>
 
       <input type="hidden" name="id" id="id">
-      <input type="hidden" name="voteId" id="voteId" value="<?= $e($req['voteId']) ?>">
+      <input type="hidden" name="voteId" id="vote-id" value="<?= $e($req['voteId']) ?>">
 
       <div class="clearfix form-actions form-group">
         <div class="col-lg-offset-2">
@@ -88,7 +89,7 @@
 
           &nbsp; &nbsp; &nbsp;
           <a class="btn btn-default"
-             href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">
+            href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">
             <i class="fa fa-undo"></i>
             返回列表
           </a>
@@ -119,7 +120,9 @@
         success: function (result) {
           $.msg(result, function () {
             if (result.code > 0) {
-              window.location = $.url('admin/vote-works', {voteId: '<?= $voteWork['voteId'] ?: $e($req['voteId']); ?>'});
+              window.location = $.url('admin/vote-works', {
+                voteId: '<?= $voteWork['voteId'] ?: $e($req['voteId']); ?>'
+              });
             }
           });
         }

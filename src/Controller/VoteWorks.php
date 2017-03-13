@@ -27,8 +27,9 @@ class VoteWorks extends \miaoxing\plugin\BaseController
             ->fetch()['maxCount'];
 
         // 增加排名和与上一名相差的票数
-        $sql = 'select * from (select A.*, @rank:=@rank+1 as rank , @lastCount-@lastCount:=A.voteCount as lastCount FROM ';
-        $sql .= '(select * from app.voteWorks where deleteTime="0000-00-00 00:00:00" and appId=' . wei()->app->getId() . ' and voteId=' . $voteWork['voteId'];
+        $sql = 'select * from (select A.*,@rank:=@rank+1 as rank, @lastCount-@lastCount:=A.voteCount as lastCount FROM';
+        $sql .= ' (select * from app.voteWorks where deleteTime="0000-00-00 00:00:00" and appId=';
+        $sql .= wei()->app->getId() . ' and voteId=' . $voteWork['voteId'];
         $sql .= ' order by voteCount desc) A ,(select @rank:=0, @lastCount:=' . $maxCount . ') B) M ';
         $sql .= 'where appId=' . wei()->app->getId() . ' and M.id=' . $req['id'];
 

@@ -40,15 +40,15 @@
       <table id="record-table" class="js-vote-work-table table table-bordered table-hover table-center">
         <thead>
         <tr>
-          <th style="width: 200px">用户</th>
-          <th style="width: 70px">姓名</th>
-          <th style="width: 100px">电话</th>
-          <th style="width: 150px">作品名称</th>
-          <th style="width: 220px">图片</th>
+          <th class="t-12">用户</th>
+          <th class="t-8">姓名</th>
+          <th class="t-8">电话</th>
+          <th class="t-8">作品名称</th>
+          <th class="t-8">图片</th>
           <th>描述</th>
-          <th style="width: 70px">投票人数</th>
-          <th style="width: 60px">投票数</th>
-          <th style="width: 120px">操作</th>
+          <th class="t-4">投票人数</th>
+          <th class="t-4">投票数</th>
+          <th class="t-12">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -76,8 +76,8 @@
     <a href="<%= $.url('admin/vote-works/%s/edit', id) %>" title="编辑">
       <i class="fa fa-edit bigger-130"></i>
     </a>
-    <a class="text-danger delete-record" href="javascript:;" data-href="<%= $.url('admin/vote-works/%s/destroy', id) %>"
-       title="删除">
+    <a class="text-danger delete-record" href="javascript:" data-href="<%= $.url('admin/vote-works/%s/destroy', id) %>"
+      title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>

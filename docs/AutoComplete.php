@@ -1,6 +1,7 @@
 <?php
 
 namespace Miaoxing\Vote\docs {
+
     /**
      * @property    \Miaoxing\Vote\Service\Vote $vote 红包活动
      * @method      \Miaoxing\Vote\Service\Vote|\Miaoxing\Vote\Service\Vote[] vote()
@@ -20,6 +21,7 @@ namespace Miaoxing\Vote\docs {
 }
 
 namespace {
+
     /**
      * @return \Miaoxing\Vote\docs\AutoComplete
      */

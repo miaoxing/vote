@@ -2,6 +2,7 @@
 
 <div class="page-header">
   <a class="btn btn-default pull-right" href="<?= $url('admin/votes') ?>">返回列表</a>
+
   <h1>
     投票管理
   </h1>
@@ -11,7 +12,7 @@
 <div class="row">
   <div class="col-xs-12">
     <form class="js-vote-form form-horizontal" method="post" role="form"
-          action="<?= $url('admin/votes/' . $vote->getFormAction()) ?>">
+      action="<?= $url('admin/votes/' . $vote->getFormAction()) ?>">
 
       <div class="form-group">
         <label class="col-lg-2 control-label" for="name">
@@ -25,24 +26,26 @@
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="startTime">
+        <label class="col-lg-2 control-label" for="start-time">
           <span class="text-warning">*</span>
           开始时间
         </label>
 
         <div class="col-lg-4">
-          <input type="text" class="js-range-date-time-picker form-control" name="startTime" id="startTime" data-rule-required="true">
+          <input type="text" class="js-range-date-time-picker form-control" name="startTime" id="start-time"
+            data-rule-required="true">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="col-lg-2 control-label" for="endTime">
+        <label class="col-lg-2 control-label" for="end-time">
           <span class="text-warning">*</span>
           结束时间
         </label>
 
         <div class="col-lg-4">
-          <input type="text" class="js-range-date-time-picker form-control" name="endTime" id="endTime" data-rule-required="true">
+          <input type="text" class="js-range-date-time-picker form-control" name="endTime" id="end-time"
+            data-rule-required="true">
         </div>
       </div>
 
@@ -66,13 +69,18 @@
           <span class="text-warning">*</span>
           投票限制
         </label>
-        <div class="col-lg-4">
-          <div id="chance-form-group">
-            <select id="chanceRule" name="chanceRule" class="form-control chanceRule pull-left readonly-after-online" style="width:100px">
-            </select>
-            <input type="text" name="chances" id="chances" class="form-control chances pull-left text-center readonly-after-online" style="width: 60px; margin-left: 10px;">
-            <p class="form-control-static pull-left">&nbsp;次</p>
+
+        <div class="col-sm-2 p-r-0">
+          <select id="chance-rule" name="chanceRule" class="form-control pull-left readonly-after-online">
+          </select>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="col-sm-8">
+            <input type="text" name="chances" id="chances"
+              class="form-control chances pull-left text-center readonly-after-online">
           </div>
+          <p class="form-control-static pull-left col-sm-4">&nbsp;次</p>
         </div>
       </div>
 
@@ -88,13 +96,13 @@
 
       <div class="styles">
         <div class="form-group">
-          <label class="col-lg-2 control-label" for="stylesCover">
+          <label class="col-lg-2 control-label" for="styles-cover">
             头图
           </label>
 
           <div class="col-lg-4">
             <div class="input-group">
-              <input type="text" class="js-styles-cover form-control cover" name="styles[cover]" id="stylesCover">
+              <input type="text" class="js-styles-cover form-control cover" name="styles[cover]" id="styles-cover">
               <span class="input-group-btn">
                 <button class="btn btn-white" type="button">
                   <i class="fa fa-picture-o"></i>
@@ -103,7 +111,7 @@
               </span>
             </div>
           </div>
-          <label class="col-lg-6 help-text" for="stylesCover">
+          <label class="col-lg-6 help-text" for="styles-cover">
             推荐宽度为640像素,高度不限
           </label>
         </div>
@@ -144,18 +152,18 @@
 <?= $block('js') ?>
 <script>
   require(['form', 'ueditor', 'template', 'validator', 'assets/dateTimePicker'], function (form) {
-    form.toOptions($('#chanceRule'), <?= json_encode(wei()->vote->getRulesToOptions()) ?>, 'id', 'name');
+    form.toOptions($('#chance-rule'), <?= json_encode(wei()->vote->getRulesToOptions()) ?>, 'id', 'name');
 
     // 初始化表单
     $('.js-vote-form')
       .loadJSON(<?= $vote->toJson() ?>)
       .ajaxForm({
         dataType: 'json',
-        beforeSubmit: function(arr, $form, options) {
+        beforeSubmit: function (arr, $form, options) {
           return $form.valid();
         },
         success: function (result) {
-          $.msg(result, function() {
+          $.msg(result, function () {
             if (result.code > 0) {
               window.location = $.url('admin/votes');
             }

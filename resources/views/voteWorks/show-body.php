@@ -8,7 +8,7 @@
   </span>
 
   <span class="content text-right">
-    距离第一名还差：<span class="text-primary js-lastCount"><?= $maxCount - $voteWork['voteCount'] ?></span>票
+    距离第一名还差：<span class="text-primary js-last-count"><?= $maxCount - $voteWork['voteCount'] ?></span>票
   </span>
 </div>
 

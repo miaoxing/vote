@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default pull-right" href="javascript:;void(0)" onclick="javascript:history.back(-1);" >返回</a>
+  <a class="btn btn-default pull-right" href="javascript:void(0)" onclick="history.back(-1);" >返回</a>
   <h1>
     投票管理
     <small>
@@ -17,10 +17,10 @@
       <table class="js-user-table record-table table table-striped table-bordered table-hover">
         <thead>
         <tr>
-          <th style="width: 240px">用户</th>
+          <th class="t-12">用户</th>
           <th>投票作品</th>
-          <th style="width: 80px">投票数</th>
-          <th style="width: 200px">投票时间</th>
+          <th class="t-8">投票数</th>
+          <th class="t-12">投票时间</th>
         </tr>
         </thead>
         <tbody></tbody>
@@ -37,7 +37,10 @@
   require(['dataTable', 'jquery-deparam', 'form', 'daterangepicker'], function () {
     var $recordTable = $('.js-user-table').dataTable({
       ajax: {
-        url: $.queryUrl('admin/vote-users.json',{voteId:'<?= $e($req['voteId']) ?>',voteWorkId:'<?= $e($req['voteWorkId']) ?>'})
+        url: $.queryUrl('admin/vote-users.json',{
+          voteId:'<?= $e($req['voteId']) ?>',
+          voteWorkId:'<?= $e($req['voteWorkId']) ?>'
+        })
       },
       columns: [
         {

@@ -53,7 +53,12 @@ class VoteLog extends \miaoxing\plugin\BaseModel
     {
         $voteLogs = wei()->voteLog()
             ->curApp()
-            ->andWhere(['code' => 1, 'voteId' => $vote['id'], 'userId' => wei()->curUser['id'], 'voteWorkId' => $voteWork['id']]);
+            ->andWhere([
+                'code' => 1,
+                'voteId' => $vote['id'],
+                'userId' => wei()->curUser['id'],
+                'voteWorkId' => $voteWork['id']
+            ]);
 
         if ($startTime && $endTime) {
             $voteLogs->andWhere('createTime between ? and ?', [$startTime, $endTime]);

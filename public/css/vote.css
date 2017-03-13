@@ -96,7 +96,7 @@
 }
 
 /* 瀑布流样式 */
-#masonry {
+.masonry {
   padding: 0;
   min-height: 450px;
   width: auto;
@@ -120,7 +120,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-#masonry .thumbnail {
+.masonry .thumbnail {
   width: 46%;
   margin: 2%;
   padding: 0;
@@ -129,17 +129,17 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
 }
 
-#masonry .thumbnail .header-title{
+.masonry .thumbnail .header-title{
   margin: 5px;
   text-align: left;
   font-weight: bold;
 }
 
-#masonry .thumbnail .img {
+.masonry .thumbnail .img {
   padding: 10px;
 }
 
-#masonry .thumbnail .img img {
+.masonry .thumbnail .img img {
   margin-bottom: 5px;
   height: auto;
   max-width: 100%;
@@ -147,15 +147,15 @@
   border: 0;
 }
 
-#masonry .thumbnail .caption {
+.masonry .thumbnail .caption {
   background-color: #fff;
   padding: 9px;
-  padding-top: 0px;
+  padding-top: 0;
   font-size: 13px;
   color: #555555;
 }
 
-#masonry .thumbnail .caption .description {
+.masonry .thumbnail .caption .description {
   font-size: 12px;
   margin: 5px 0;
   text-align: left;
@@ -168,18 +168,18 @@
   -webkit-box-orient: vertical;
 }
 
-#masonry .thumbnail .caption .extra {
+.masonry .thumbnail .caption .extra {
   font-size: 11px;
   text-align: right;
 }
 
-#masonry .thumbnail .caption .extra .vote .vote-button{
+.masonry .thumbnail .caption .extra .vote .vote-button{
   border: 1px;
   border-radius: 3px;
   color: #fff;
 }
 
-#masonry .thumbnail .caption .extra .vote-count {
+.masonry .thumbnail .caption .extra .vote-count {
   text-align: left;
   float: left;
   height: 30px;
@@ -188,7 +188,7 @@
   font-weight: bold;
 }
 
-#masonry .thumbnail .caption .extra .vote-count-num {
+.masonry .thumbnail .caption .extra .vote-count-num {
   color: #ff4500;
 }
 

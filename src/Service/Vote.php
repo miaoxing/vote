@@ -61,7 +61,12 @@ class Vote extends \miaoxing\plugin\BaseModel
             $extData = ['addVoteWorkUserCount' => 1];
 
             // 检查是否新增投票人数
-            if (wei()->voteUser()->curApp()->andWhere(['voteId' => $this['id'], 'voteWorkId' => $voteWork['id']])->findAll()->count() == 0) {
+            $count = wei()->voteUser()->curApp()
+                ->andWhere(['voteId' => $this['id'], 'voteWorkId' => $voteWork['id']])
+                ->findAll()
+                ->count();
+
+            if ($count == 0) {
                 $extData = ['addVoteUserCount' => 1];
             }
         }
@@ -119,14 +124,15 @@ class Vote extends \miaoxing\plugin\BaseModel
                 break;
 
             case 'everyDay':
+                $nextDay = date('Y-m-d', time() + 86400);
                 if (!$this['isRepeated']) {
-                    $count = wei()->voteLog->getVoteWorkLogCountByTimeRange($this, $voteWork, date('Y-m-d'), date('Y-m-d', time() + 86400));
+                    $count = wei()->voteLog->getVoteWorkLogCountByTimeRange($this, $voteWork, date('Y-m-d'), $nextDay);
                     if ($count >= 1) {
                         return ['code' => -6, 'message' => '同一天不能重复投同一个作品'];
                     }
                 }
 
-                $logCount = wei()->voteLog->getVoteLogCountByTimeRange($this, date('Y-m-d'), date('Y-m-d', time() + 86400));
+                $logCount = wei()->voteLog->getVoteLogCountByTimeRange($this, date('Y-m-d'), $nextDay);
                 break;
         }
 
@@ -144,7 +150,11 @@ class Vote extends \miaoxing\plugin\BaseModel
      */
     public function getAllVoteUserCount()
     {
-        $data = wei()->voteWork()->select('sum(voteUserCount) as count')->curApp()->andWhere(['voteId' => $this['id']])->fetch();
+        $data = wei()->voteWork()
+            ->select('sum(voteUserCount) as count')
+            ->curApp()
+            ->andWhere(['voteId' => $this['id']])
+            ->fetch();
 
         return $data['count'] ?: 0;
     }
@@ -155,7 +165,11 @@ class Vote extends \miaoxing\plugin\BaseModel
      */
     public function getAllVoteCount()
     {
-        $data = wei()->voteWork()->select('sum(voteCount) as count')->curApp()->andWhere(['voteId' => $this['id']])->fetch();
+        $data = wei()->voteWork()
+            ->select('sum(voteCount) as count')
+            ->curApp()
+            ->andWhere(['voteId' => $this['id']])
+            ->fetch();
 
         return $data['count'] ?: 0;
     }

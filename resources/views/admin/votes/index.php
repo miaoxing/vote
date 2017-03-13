@@ -17,12 +17,12 @@
       <table id="record-table" class="js-vote-table table table-bordered table-hover table-center">
         <thead>
         <tr>
-          <th style="width: 240px">活动名称</th>
+          <th class="t-12">活动名称</th>
           <th>描述</th>
-          <th style="width: 180px">开始时间~结束时间</th>
-          <th style="width: 90px">参与人次</th>
-          <th style="width: 90px">默认</th>
-          <th style="width: 160px">操作</th>
+          <th class="t-12">开始时间~结束时间</th>
+          <th  class="t-8">参与人次</th>
+          <th  class="t-8">默认</th>
+          <th  class="t-12">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
   <% if (isDefault == '1') { %>
   默认活动
   <% } else { %>
-  <a href="javascript:;" class="js-set-default" data-id="<%= id %>">设为默认</a>
+  <a href="javascript:" class="js-set-default" data-id="<%= id %>">设为默认</a>
   <% } %>
 </script>
 
@@ -61,7 +61,8 @@
     <a href="<%= $.url('admin/votes/%s/edit', id) %>" title="编辑">
       <i class="fa fa-edit bigger-130"></i>
     </a>
-    <a class="text-danger delete-record" href="javascript:;" data-href="<%= $.url('admin/votes/%s/destroy', id) %>" title="删除">
+    <a class="text-danger delete-record" href="javascript:" data-href="<%= $.url('admin/votes/%s/destroy', id) %>"
+      title="删除">
       <i class="fa fa-trash-o bigger-130"></i>
     </a>
   </div>
@@ -84,7 +85,8 @@
         {
           data: 'startTime',
           render: function (data, type, full) {
-            return full.startTime.replace(/-/g, '.').substr(0, 10) + '~' + full.endTime.replace(/-/g, '.').substr(0, 10);
+            return full.startTime.replace(/-/g, '.').substr(0, 10) + '~'
+              + full.endTime.replace(/-/g, '.').substr(0, 10);
           }
         },
         {
