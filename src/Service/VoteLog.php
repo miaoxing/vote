@@ -57,7 +57,7 @@ class VoteLog extends \miaoxing\plugin\BaseModel
                 'code' => 1,
                 'voteId' => $vote['id'],
                 'userId' => wei()->curUser['id'],
-                'voteWorkId' => $voteWork['id']
+                'voteWorkId' => $voteWork['id'],
             ]);
 
         if ($startTime && $endTime) {
