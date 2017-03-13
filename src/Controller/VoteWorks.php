@@ -18,6 +18,10 @@ class VoteWorks extends \miaoxing\plugin\BaseController
 
     public function showAction($req)
     {
+        if (!$req['id']) {
+            return $this->err('缺少参数');
+        }
+
         $voteWork = wei()->voteWork()->curApp()->findById($req['id']);
         $maxCount = wei()->voteWork()
             ->select('max(voteCount) as maxCount')
