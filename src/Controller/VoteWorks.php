@@ -9,7 +9,7 @@ class VoteWorks extends \miaoxing\plugin\BaseController
     public function __construct(array $options = [])
     {
         parent::__construct($options);
-        $this->middleware(RateLimit::className(), [
+        $this->middleware(RateLimit::class, [
             'only' => 'vote',
             'timeWindow' => RateLimit::MINUTE,
             'max' => 100,
