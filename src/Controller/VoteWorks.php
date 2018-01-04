@@ -4,7 +4,7 @@ namespace Miaoxing\Vote\Controller;
 
 use Miaoxing\Plugin\Middleware\RateLimit;
 
-class VoteWorks extends \miaoxing\plugin\BaseController
+class VoteWorks extends \Miaoxing\Plugin\BaseController
 {
     public function __construct(array $options = [])
     {

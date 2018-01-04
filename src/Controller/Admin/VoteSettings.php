@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Vote\Controller\admin;
 
-class VoteSettings extends \miaoxing\plugin\BaseController
+class VoteSettings extends \Miaoxing\Plugin\BaseController
 {
     protected $controllerName = '投票设置';
 

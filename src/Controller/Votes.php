@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Vote\Controller;
 
-class Votes extends \miaoxing\plugin\BaseController
+class Votes extends \Miaoxing\Plugin\BaseController
 {
     public function showAction($req)
     {
