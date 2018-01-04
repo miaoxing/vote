@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Vote\Service;
 
-class VoteWork extends \miaoxing\plugin\BaseModel
+class VoteWork extends \Miaoxing\Plugin\BaseModel
 {
     /**
      * {@inheritdoc}

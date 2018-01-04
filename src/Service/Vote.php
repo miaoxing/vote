@@ -2,7 +2,7 @@
 
 namespace Miaoxing\Vote\Service;
 
-class Vote extends \miaoxing\plugin\BaseModel
+class Vote extends \Miaoxing\Plugin\BaseModel
 {
     protected $table = 'votes';
 

@@ -4,7 +4,7 @@ namespace Miaoxing\Vote\Service;
 
 use Miaoxing\Plugin\Service\User;
 
-class VoteUser extends \miaoxing\plugin\BaseModel
+class VoteUser extends \Miaoxing\Plugin\BaseModel
 {
     /**
      * {@inheritdoc}
