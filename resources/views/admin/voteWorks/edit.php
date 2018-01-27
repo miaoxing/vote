@@ -101,7 +101,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'template', 'validator', 'ueditor'], function () {
     var data = <?= $voteWork->toJson() ?>;

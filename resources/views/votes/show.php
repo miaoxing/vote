@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/vote/css/vote.css') ?>"/>
 <?= $block->end() ?>
 
@@ -10,7 +10,7 @@
 <?php require $view->getFile('vote:votes/show-nav.php') ?>
 <?php require $view->getFile('vote:votes/show-list.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   var vote = <?= $vote->toJson(); ?>;
   $('.js-btn-rule').click(function () {

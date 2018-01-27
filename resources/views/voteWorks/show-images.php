@@ -13,7 +13,7 @@
   </ol>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   $('.js-vote-slider').Swipe({
     auto: 3000,

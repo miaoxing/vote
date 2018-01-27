@@ -3,7 +3,7 @@
   <a class="btn btn-block btn-default" href="<?= $url->full('votes/%s', $voteWork['voteId']) ?>">更多作品</a>
 </div>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   $('.js-submit').on('click', '.js-vote', function () {
     var id = $(this).data('id');

@@ -1,6 +1,6 @@
 <?php $view->layout() ?>
 
-<?= $block('css') ?>
+<?= $block->css() ?>
 <link rel="stylesheet" href="<?= $asset('plugins/admin/css/filter.css') ?>"/>
 <?= $block->end() ?>
 
@@ -84,7 +84,7 @@
 </script>
 <?php require $view->getFile('user:admin/user/richInfo.php') ?>
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['dataTable', 'jquery-deparam', 'form'], function () {
     $('.js-vote-work-form').loadParams().update(function () {

@@ -40,7 +40,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'validator'], function (form) {
     $('.js-setting-form')

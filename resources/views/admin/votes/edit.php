@@ -149,7 +149,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['form', 'ueditor', 'template', 'validator', 'assets/dateTimePicker'], function (form) {
     form.toOptions($('#chance-rule'), <?= json_encode(wei()->vote->getRulesToOptions()) ?>, 'id', 'name');

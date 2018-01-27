@@ -32,7 +32,7 @@
 </div><!-- /.col -->
 <!-- /.row -->
 
-<?= $block('js') ?>
+<?= $block->js() ?>
 <script>
   require(['dataTable', 'jquery-deparam', 'form', 'daterangepicker'], function () {
     var $recordTable = $('.js-user-table').dataTable({
