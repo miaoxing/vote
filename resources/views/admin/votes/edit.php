@@ -101,15 +101,7 @@
           </label>
 
           <div class="col-lg-4">
-            <div class="input-group">
-              <input type="text" class="js-styles-cover form-control cover" name="styles[cover]" id="styles-cover">
-              <span class="input-group-btn">
-                <button class="btn btn-white" type="button">
-                  <i class="fa fa-picture-o"></i>
-                  选择图片
-                </button>
-              </span>
-            </div>
+            <input type="text" class="js-styles-cover form-control cover" name="styles[cover]" id="styles-cover">
           </div>
           <label class="col-lg-6 help-text" for="styles-cover">
             推荐宽度为640像素,高度不限
@@ -151,7 +143,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'template', 'validator', 'assets/dateTimePicker'], function (form) {
+  require(['form', 'ueditor', 'template', 'validator', 'assets/dateTimePicker', 'plugins/admin/js/image-upload'], function (form) {
     form.toOptions($('#chance-rule'), <?= json_encode(wei()->vote->getRulesToOptions()) ?>, 'id', 'name');
 
     // 初始化表单
@@ -179,7 +171,7 @@
     });
 
     $('.js-rule').ueditor();
-    $('.js-styles-cover').imageInput();
+    $('.js-styles-cover').imageUpload();
   });
 </script>
 <?= $block->end() ?>
