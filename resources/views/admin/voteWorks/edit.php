@@ -57,12 +57,7 @@
         </label>
 
         <div class="col-sm-10">
-          <ul class="ace-thumbnails image-picker">
-            <li class="select-image text-center">
-              <h5>选择图片</h5>
-              <i class="fa fa-picture-o"></i>
-            </li>
-          </ul>
+          <input class="js-images" name="images[]" type="text" required>
           <label class="help-text">图片长宽比1:1<br>建议宽度大于等于640像素</label>
         </div>
       </div>
@@ -103,7 +98,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'template', 'validator', 'ueditor'], function () {
+  require(['form', 'template', 'validator', 'plugins/admin/js/image-upload'], function () {
     var data = <?= $voteWork->toJson() ?>;
     // 初始化表单
     $('.js-vote-work-form')
@@ -111,10 +106,6 @@
       .ajaxForm({
         dataType: 'json',
         beforeSubmit: function (arr, $form, options) {
-          if ($form.find('input[name=images\\[\\]]').length == 0) {
-            $.err('请至少选择一张图片');
-            return false;
-          }
           return $form.valid();
         },
         success: function (result) {
@@ -129,7 +120,9 @@
       })
       .validate();
 
-    $('.image-picker').imagePicker(data.images);
+    $('.js-images').imageUpload({
+      images: data.images
+    });
   });
 </script>
 <?= $block->end() ?>
