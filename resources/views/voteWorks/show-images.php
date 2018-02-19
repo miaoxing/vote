@@ -1,28 +1,10 @@
-<div class="js-vote-slider swipe">
-  <div class="js-images-preview swipe-wrap">
-    <?php foreach ($voteWork['images'] as $index => $image) : ?>
-      <div>
-        <img src="<?= $image ?>"/>
-      </div>
-    <?php endforeach ?>
-  </div>
-  <ol class="swipe-nav">
-    <?php foreach ($voteWork['images'] as $index => $image) : ?>
-      <li><a class="<?= $index == 0 ? 'swipe-nav-active' : '' ?>"></a></li>
-    <?php endforeach ?>
-  </ol>
-</div>
+<?php
+
+$view->display('@app/app/swipe.php', ['images' => $voteWork['images']]);
+?>
 
 <?= $block->js() ?>
 <script>
-  $('.js-vote-slider').Swipe({
-    auto: 3000,
-    callback: function (index, elem) {
-      var nav = $(elem).parent().next().find('a');
-      nav.removeClass('swipe-nav-active').eq(index).addClass('swipe-nav-active');
-    }
-  }).fixSwipeImgHeight();
-
   require(['plugins/wechat/js/wx'], function (wx) {
     wx.load(function () {
       $('.js-images-preview img').click(function () {
