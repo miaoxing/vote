@@ -72,4 +72,4 @@
 </script>
 <?= $block->end() ?>
 
-<?php require $view->getFile('user:admin/user/richInfo.php') ?>
+<?php require $view->getFile('@user/admin/user/richInfo.php') ?>

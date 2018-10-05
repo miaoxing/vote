@@ -4,11 +4,11 @@
 <link rel="stylesheet" href="<?= $asset('plugins/vote/css/vote.css') ?>"/>
 <?= $block->end() ?>
 
-<?php require $view->getFile('vote:votes/show-image.php') ?>
-<?php require $view->getFile('vote:votes/show-header.php') ?>
-<?php require $view->getFile('vote:votes/show-body.php') ?>
-<?php require $view->getFile('vote:votes/show-nav.php') ?>
-<?php require $view->getFile('vote:votes/show-list.php') ?>
+<?php require $view->getFile('@vote/votes/show-image.php') ?>
+<?php require $view->getFile('@vote/votes/show-header.php') ?>
+<?php require $view->getFile('@vote/votes/show-body.php') ?>
+<?php require $view->getFile('@vote/votes/show-nav.php') ?>
+<?php require $view->getFile('@vote/votes/show-list.php') ?>
 
 <?= $block->js() ?>
 <script>

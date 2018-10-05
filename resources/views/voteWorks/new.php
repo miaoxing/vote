@@ -56,7 +56,7 @@
 </form>
 
 <?php require $view->getFile('@wechat-image/wechat-image/uploadImage.php') ?>
-<?php require $view->getFile('vote:voteWorks/new-append.php') ?>
+<?php require $view->getFile('@vote/voteWorks/new-append.php') ?>
 
 <?= $block->js() ?>
 <script>
