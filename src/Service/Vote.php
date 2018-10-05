@@ -55,7 +55,7 @@ class Vote extends \Miaoxing\Plugin\BaseModel
 
         $extData = [];
         if ($voteUser->isNew()) {
-            $voteWork->incr('voteUserCount', 1);
+            $voteWork->incr('voteUserCount');
 
             // 检查是否新增作品投票人数
             $extData = ['addVoteWorkUserCount' => 1];
@@ -71,10 +71,10 @@ class Vote extends \Miaoxing\Plugin\BaseModel
             }
         }
 
-        $voteWork->incr('voteCount', 1);
+        $voteWork->incr('voteCount');
         $voteWork->save();
 
-        $voteUser->incr('voteCount', 1);
+        $voteUser->incr('voteCount');
         $voteUser->save();
 
         $ret += $extData;
