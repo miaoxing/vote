@@ -29,7 +29,7 @@ class Votes extends \Miaoxing\Plugin\BaseController
         }
         $voteWorks = $data;
 
-        $headerTitle = $vote['name'];
+        $this->page->setTitle($vote['name']);
 
         return get_defined_vars();
     }

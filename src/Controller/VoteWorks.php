@@ -42,7 +42,7 @@ class VoteWorks extends \Miaoxing\Plugin\BaseController
 
         $vote = wei()->vote()->curApp()->findOneById($voteWork['voteId']);
 
-        $headerTitle = $voteWork['name'];
+        $this->page->setTitle($voteWork['name']);
 
         return get_defined_vars();
     }
