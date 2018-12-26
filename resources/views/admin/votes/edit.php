@@ -104,7 +104,7 @@
             <input type="text" class="js-styles-cover form-control cover" name="styles[cover]" id="styles-cover">
           </div>
           <label class="col-lg-6 help-text" for="styles-cover">
-            推荐宽度为640像素,高度不限
+            推荐宽度为750像素,高度不限
           </label>
         </div>
       </div>

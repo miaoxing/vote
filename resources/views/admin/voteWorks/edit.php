@@ -58,7 +58,7 @@
 
         <div class="col-sm-10">
           <input class="js-images" name="images[]" type="text" required>
-          <label class="help-text">图片长宽比1:1<br>建议宽度大于等于640像素</label>
+          <label class="help-text">图片长宽比1:1<br>建议宽度大于等于750像素</label>
         </div>
       </div>
 
