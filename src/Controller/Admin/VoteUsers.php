@@ -1,6 +1,6 @@
 <?php
 
-namespace Miaoxing\Vote\Controller\admin;
+namespace Miaoxing\Vote\Controller\Admin;
 
 class VoteUsers extends \Miaoxing\Plugin\BaseController
 {
