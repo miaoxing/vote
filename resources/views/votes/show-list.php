@@ -28,7 +28,7 @@
         <span class="vote-count">票数：<span class="vote-count-num js-vote-count"><%= voteCount %></span></span>
         <span class="vote">
           <a href="javascript:void(0)" data-id="<%= id %>" class="js-vote">
-            <button class="vote-button bg-primary">投票</button>
+            <button class="vote-button bg-primary text-white">投票</button>
           </a>
         </span>
       </div>
