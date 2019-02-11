@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-12">
     <div class="table-responsive">
       <table class="js-user-table record-table table table-striped table-bordered table-hover">
         <thead>
