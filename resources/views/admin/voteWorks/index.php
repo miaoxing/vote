@@ -24,7 +24,7 @@
     <!-- PAGE CONTENT BEGINS -->
     <div class="table-responsive">
       <form class="js-vote-work-form form-horizontal filter-form" role="form">
-        <div class="well form-well m-b">
+        <div class="well">
           <div class="form-group form-group-sm">
 
             <label class="col-md-1 control-label" for="name">作品名称：</label>
