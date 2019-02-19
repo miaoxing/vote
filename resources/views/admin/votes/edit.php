@@ -70,7 +70,7 @@
           投票限制
         </label>
 
-        <div class="col-sm-2 p-r-0">
+        <div class="col-sm-2 pr-0">
           <select id="chance-rule" name="chanceRule" class="form-control pull-left readonly-after-online">
           </select>
         </div>

@@ -1,4 +1,4 @@
-<div class="m-a-sm js-submit">
+<div class="m-2 js-submit">
   <a class="btn btn-block btn-primary js-vote" href="javascript:void(0)" data-id="<?= $voteWork['id'] ?>">投 票</a>
   <a class="btn btn-block btn-default" href="<?= $url->full('votes/%s', $voteWork['voteId']) ?>">更多作品</a>
 </div>
