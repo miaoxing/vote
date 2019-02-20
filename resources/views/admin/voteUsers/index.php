@@ -34,7 +34,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['plugins/admin/js/data-table', 'jquery-deparam', 'form', 'plugins/admin/js/date-range-picker'], function () {
+  require(['plugins/admin/js/data-table', 'jquery-unparam', 'form', 'plugins/admin/js/date-range-picker'], function () {
     var $recordTable = $('.js-user-table').dataTable({
       ajax: {
         url: $.queryUrl('admin/vote-users.json',{
