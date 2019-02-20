@@ -143,7 +143,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'ueditor', 'template', 'validator', 'assets/dateTimePicker', 'plugins/admin/js/image-upload'], function (form) {
+  require(['form', 'ueditor', 'template', 'validator', 'plugins/admin/js/range-date-time-picker', 'plugins/admin/js/image-upload'], function (form) {
     form.toOptions($('#chance-rule'), <?= json_encode(wei()->vote->getRulesToOptions()) ?>, 'id', 'name');
 
     // 初始化表单
