@@ -86,7 +86,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['dataTable', 'jquery-deparam', 'form'], function () {
+  require(['plugins/admin/js/data-table', 'jquery-deparam', 'form'], function () {
     $('.js-vote-work-form').loadParams().update(function () {
       $recordTable.reload($(this).serialize(), false);
     });

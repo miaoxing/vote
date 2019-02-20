@@ -70,7 +70,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['dataTable', 'form', 'jquery-deparam'], function () {
+  require(['plugins/admin/js/data-table', 'form', 'jquery-deparam'], function () {
     var $recordTable = $('.js-vote-table').dataTable({
       ajax: {
         url: $.queryUrl('admin/votes.json')
