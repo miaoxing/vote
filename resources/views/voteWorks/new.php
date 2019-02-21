@@ -82,7 +82,7 @@
   require([
     'plugins/wechat-image/js/wechat-image',
     'plugins/wechat<?= $isCrop ? '-corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
-    'comps/artTemplate/template.min'
+    'plugins/app/libs/artTemplate/template.min'
   ], function (image, wx, template) {
     template.helper('$', $);
 

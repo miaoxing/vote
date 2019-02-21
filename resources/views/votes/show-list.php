@@ -41,7 +41,7 @@
 <script>
   require([
     'comps/masonry/dist/masonry.pkgd.min',
-    'comps/artTemplate/template.min',
+    'plugins/app/libs/artTemplate/template.min',
     'comps/imagesloaded/imagesloaded.pkgd.min'
   ], function (Masonry, template) {
     template.helper('$', $);
