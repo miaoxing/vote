@@ -60,7 +60,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['jquery-form'], function () {
+  require(['plugins/app/libs/jquery-form/jquery.form'], function () {
     $('.js-vote-form')
       .ajaxForm({
         url: $.url('vote-works/update'),
