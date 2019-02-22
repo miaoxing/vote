@@ -98,7 +98,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'template', 'plugins/app/js/validation', 'plugins/admin/js/image-upload'], function () {
+  require(['form', plugins/app/libs/artTemplate/template.min, 'plugins/app/js/validation', 'plugins/admin/js/image-upload'], function () {
     var data = <?= $voteWork->toJson() ?>;
     // 初始化表单
     $('.js-vote-work-form')
