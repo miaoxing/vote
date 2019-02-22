@@ -44,7 +44,6 @@
     'plugins/app/libs/artTemplate/template.min',
     'comps/imagesloaded/imagesloaded.pkgd.min'
   ], function (Masonry, template) {
-    template.helper('$', $);
 
     //初始化数据
     var voteWorkData = <?= json_encode($voteWorks, JSON_UNESCAPED_UNICODE); ?>;

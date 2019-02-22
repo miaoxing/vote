@@ -84,7 +84,6 @@
     'plugins/wechat<?= $isCrop ? '-corp' : '' ?>/js/wx<?= $isCrop ? '-corp' : '' ?>',
     'plugins/app/libs/artTemplate/template.min'
   ], function (image, wx, template) {
-    template.helper('$', $);
 
     $('.js-upload-container').html(template.render('wx-upload-image-tpl', { title: '作品照片上传'}));
 
