@@ -2,7 +2,7 @@
 
 <!-- /.page-header -->
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <a class="btn btn-success" href="<?= $url('admin/votes/new') ?>">添加投票活动</a>
   </div>
   <h1>

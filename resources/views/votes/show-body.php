@@ -20,7 +20,7 @@
     投票次数：<span class="js-all-vote-count"><?= $vote->getAllVoteCount(); ?></span>
   </span>
 
-  <span class="vote-join pull-right">
+  <span class="vote-join float-right">
     <?php if ($setting('vote.isOpen')) : ?>
       <?php if (!$curVoteWork) : ?>
         <a href="<?= $url->full('vote-works/new', ['voteId' => $vote['id']]) ?>">

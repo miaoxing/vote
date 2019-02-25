@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default pull-right" href="<?= $url('admin/votes') ?>">返回列表</a>
+  <a class="btn btn-default float-right" href="<?= $url('admin/votes') ?>">返回列表</a>
 
   <h1>
     投票管理
@@ -71,16 +71,16 @@
         </label>
 
         <div class="col-sm-2 pr-0">
-          <select id="chance-rule" name="chanceRule" class="form-control pull-left readonly-after-online">
+          <select id="chance-rule" name="chanceRule" class="form-control float-left readonly-after-online">
           </select>
         </div>
 
         <div class="col-sm-2">
           <div class="col-sm-8">
             <input type="text" name="chances" id="chances"
-              class="form-control chances pull-left text-center readonly-after-online">
+              class="form-control chances float-left text-center readonly-after-online">
           </div>
-          <p class="form-control-static pull-left col-sm-4">&nbsp;次</p>
+          <p class="form-control-static float-left col-sm-4">&nbsp;次</p>
         </div>
       </div>
 

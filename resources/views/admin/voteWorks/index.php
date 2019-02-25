@@ -5,7 +5,7 @@
 <?= $block->end() ?>
 
 <div class="page-header">
-  <div class="pull-right">
+  <div class="float-right">
     <a class="btn btn-success" href="<?= $url('admin/vote-works/new', ['voteId' => $e($req['voteId'])]) ?>">添加投票作品</a>
     <a class="btn btn-default" href="<?= $url('admin/votes') ?>">返回活动列表</a>
   </div>
