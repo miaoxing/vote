@@ -80,7 +80,7 @@
             <input type="text" name="chances" id="chances"
               class="form-control chances float-left text-center readonly-after-online">
           </div>
-          <p class="form-control-static float-left col-sm-4">&nbsp;次</p>
+          <p class="form-control-plaintext float-left col-sm-4">&nbsp;次</p>
         </div>
       </div>
 
