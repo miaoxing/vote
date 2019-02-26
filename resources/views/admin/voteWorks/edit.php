@@ -1,7 +1,7 @@
 <?php $view->layout() ?>
 
 <div class="page-header">
-  <a class="btn btn-default float-right"
+  <a class="btn btn-secondary float-right"
     href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">返回列表</a>
 
   <h1>
@@ -83,7 +83,7 @@
           </button>
 
           &nbsp; &nbsp; &nbsp;
-          <a class="btn btn-default"
+          <a class="btn btn-secondary"
             href="<?= $url('admin/vote-works', ['voteId' => $voteWork['voteId'] ?: $e($req['voteId'])]) ?>">
             <i class="fa fa-undo"></i>
             返回列表
