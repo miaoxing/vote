@@ -1,12 +1,12 @@
 <div class="vote-nav">
   <ul class="header-tab nav tab-underline">
-    <li class="nav-item <?= $req['sort'] == 'createTime' ? 'active border-primary' : '' ?>">
-      <a class="nav-link text-active-primary" href="<?= $url->full('votes/%s/show', $vote['id'], ['sort' => 'createTime']) ?>">
+    <li class="nav-item">
+      <a class="nav-link text-active-primary border-active-primary <?= $req['sort'] == 'createTime' ? 'active border-primary' : '' ?>" href="<?= $url->full('votes/%s/show', $vote['id'], ['sort' => 'createTime']) ?>">
         最新参赛
       </a>
     </li>
-    <li class="nav-item <?= $req['sort'] == 'voteCount' ? 'active border-primary' : '' ?>">
-      <a class="nav-link text-active-primary" href="<?= $url->full('votes/%s/show', $vote['id'], ['sort' => 'voteCount']) ?>">
+    <li class="nav-item">
+      <a class="nav-link text-active-primary border-active-primary <?= $req['sort'] == 'voteCount' ? 'active border-primary' : '' ?>" href="<?= $url->full('votes/%s/show', $vote['id'], ['sort' => 'voteCount']) ?>">
         最新排名
       </a>
     </li>
