@@ -1,5 +1,5 @@
 <div class="vote-nav">
-  <ul class="header-tab nav tab-underline">
+  <ul class="header-nav nav nav-underline">
     <li class="nav-item">
       <a class="nav-link text-active-primary border-active-primary <?= $req['sort'] == 'createTime' ? 'active border-primary' : '' ?>" href="<?= $url->full('votes/%s/show', $vote['id'], ['sort' => 'createTime']) ?>">
         最新参赛
