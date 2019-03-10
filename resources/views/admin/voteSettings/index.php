@@ -42,7 +42,7 @@
 
 <?= $block->js() ?>
 <script>
-  require(['form', 'plugins/app/js/validation'], function (form) {
+  require(['plugins/admin/js/form', 'plugins/app/js/validation'], function (form) {
     $('.js-setting-form')
       .loadJSON(<?= json_encode(['js-vote-is-open' => $setting('vote.isOpen', '1')]) ?>)
       .ajaxForm({
